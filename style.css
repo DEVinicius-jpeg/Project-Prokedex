@@ -62,12 +62,40 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .material-symbols-outlined{
     transform: rotate(90deg);
 }
 
+.output{
+    background-color: var(--cor-bas-cinza);
+    border-radius: 5px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#pokemon-name,
+#pokemon-id,
+#weight,
+#height{
+    padding: 5px 10px;
+    background-color: var(--cor-bas-branco);
+    border-radius: 5px;
+    font-size: large;
+    font-weight: 600;
+    margin: 15px 5px;
+    display: inline-block;
+}
+
+.nav-container{
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
 /* .footer{
     background-color: var(--cor-enf-amarelo);
     height: 50px;

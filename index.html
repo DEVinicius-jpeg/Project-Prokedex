@@ -19,16 +19,18 @@
         <div class="container">
             <form role="search" id="search-form">
                 <label for="search-input">Search By Pokémon <strong>Name</strong> or <strong>ID</strong>:
-                    <input id="search-input" type="text">
+                    <input id="search-input" required type="text">
                 </label>
                 <button id="search-button">Get a Pokémon<span class="material-symbols-outlined">search</span></button>
             </form>
             <div class="output">
-                <div class="top-container">
-                    <span id="pokemon-name"></span>
-                    <span id="pokemon-id"></span>
-                    <span id="weight"></span>
-                    <span id="height"></span>
+                <div class="name-and-id">
+                    <span id="pokemon-name">Pikachu</span>
+                    <span id="pokemon-id">Nº 00025</span>
+                </div>
+                <div class="size">
+                    <span id="weight">weight: 40</span>
+                    <span id="height">height: 60</span>
                 </div>
                 <div id="sprite-container" class="sprite-container"></div>
                 <div class="bottom-container">
