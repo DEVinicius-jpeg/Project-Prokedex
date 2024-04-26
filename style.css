@@ -52,13 +52,12 @@ p{
 }
 
 #search-button{
-    width: 600px;
-    height: 50px;
+    padding: 15px 225px;
     border-radius: 5px;
     border: none;
     color: var(--cor-bas-branco);
     background-color: var(--cor-enf-azul);
-    font-size: larger;
+    font-size: large;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,8 +95,20 @@ p{
     display: flex;
     justify-content: space-between;
 }
-/* .footer{
-    background-color: var(--cor-enf-amarelo);
-    height: 50px;
-} */
 
+#prev-button,
+#next-button{
+    background-color: var(--cor-enf-azul);
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-bas-branco);
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.footer{
+    background-color: var(--cor-enf-amarelo);
+    padding: 40px;
+    margin-top: auto;
+}
