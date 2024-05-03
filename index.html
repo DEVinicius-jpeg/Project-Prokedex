@@ -25,12 +25,12 @@
             </form>
             <div class="output">
                 <div class="name-and-id">
-                    <span id="pokemon-name"></span>
-                    <span id="pokemon-id"></span>
+                    <span id="pokemon-name" class="disable"></span>
+                    <span id="pokemon-id" class="disable"></span>
                 </div>
                 <div class="size">
-                    <span id="weight">Weight: </span>
-                    <span id="height">Height: </span>
+                    <span id="weight" class="disable"> </span>
+                    <span id="height" class="disable"> </span>
                 </div>
                 <div id="sprite-container" class="sprite-container"></div>
                 <div class="bottom-container">
@@ -65,14 +65,15 @@
                         </tr>
                     </table>
                 </div>
-                <div id="types">
+                <div id="types-container">
                     <span id="type-title">Type</span>
+                    <div id="types-output"></div>
                 </div>
             </div>
-            <div class="nav-container">
+            <!-- <div class="nav-container">
                 <button id="prev-button">PREV</button>
                 <button id="next-button">NEXT</button>
-            </div>
+            </div> -->
         </div>
     </main>
     <footer class="footer">
