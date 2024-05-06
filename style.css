@@ -78,7 +78,7 @@ p{
     width: 600px;
     display: grid;
     grid-template-columns: 290px 1fr;
-    grid-template-rows: 60px 1fr 80px;
+    grid-template-rows: 60px 200px 80px;
     gap: 20px;
 }
 
@@ -90,7 +90,7 @@ p{
     width: max-content;
     background-color: var(--cor-bas-branco);
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     margin: 15px 20px;
     letter-spacing: 1.2px;
@@ -154,6 +154,30 @@ p{
     text-align: center;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 90%;
+    font-size: 1 rem;
+    color: #000000;
+    background-color: var(--cor-bas-branco);
+  }
+  
+  th:nth-child(even),
+  td:nth-child(even) {
+    border-left: 5px solid #f5f6f7;
+  }
+  
+  tr {
+    border-bottom: 5px solid #f5f6f7;
+  }
+  
+  td,
+  th {
+    text-align: center;
+    padding: 8px;
+  }
+  
 .disable{
     display: none !important;
 }
