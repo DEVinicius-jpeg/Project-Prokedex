@@ -115,7 +115,7 @@ p{
     height: 200px;
 }
 
-#types-output{
+#types{
     margin: 10px 10px 10px 20px;
     display: flex;
     /* justify-content: space-between; */
@@ -130,7 +130,7 @@ p{
     margin-bottom: 20px;
 }
 
-#types-container{
+#types-output{
     position: relative;
 }
 
@@ -144,7 +144,7 @@ p{
     right: 265px;
 }
 
-#type{
+#type-element{
     width: 66px;
     padding: 5px;
     border-radius: 5px;

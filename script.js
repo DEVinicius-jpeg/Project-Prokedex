@@ -3,7 +3,7 @@ const pokemonId = document.getElementById('pokemon-id');
 const pokemonWeight = document.getElementById('weight');
 const pokemonHeight = document.getElementById('height');
 const spriteContainer = document.getElementById('sprite-container');
-const typesConteiner = document.getElementById('types-output');
+const typesConteiner = document.getElementById('types');
 const searchForm = document.getElementById('search-form');
 const hpStats = document.getElementById('hp');
 const attackStats = document.getElementById('attack');
@@ -13,18 +13,21 @@ const spDefenseStats = document.getElementById('special-defense');
 const speedStats = document.getElementById('speed');
 
 const clearContents = ()=>{
-    pokemonName.classList.add('disable');
-    pokemonId.classList.add('disable');
-    pokemonWeight.classList.add('disable');
-    pokemonHeight.classList.add('disable');
+    pokemonName.textContent = '';
+    pokemonId.textContent = '';
+    pokemonWeight.textContent = '';
+    pokemonHeight.textContent = '';
     spriteContainer.innerHTML = '';
     typesConteiner.innerHTML = '';
     hpStats.textContent = '';
     attackStats.textContent = '';
-    defenseStats.textContent = '';
-    spAttackStats.textContent = '';
     spDefenseStats.textContent = '';
     speedStats.textContent = '';
+
+    pokemonName.classList.add('disable');
+    pokemonId.classList.add('disable');
+    pokemonWeight.classList.add('disable');
+    pokemonHeight.classList.add('disable');
 }
 
 const fetchPokemon = async ()=>{
@@ -32,10 +35,8 @@ const fetchPokemon = async ()=>{
   const input = document.getElementById('search-input');
   
   try{
-    const response = await fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${input.value}`);
-    input.value = '';
+    const response = await fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${input.value.toLowerCase()}`);
     const data = await response.json(response.body);
-    console.log(data);
 
     hpStats.textContent = data.stats[0].base_stat;
     attackStats.textContent = data.stats[1].base_stat;
@@ -44,13 +45,15 @@ const fetchPokemon = async ()=>{
     spDefenseStats.textContent = data.stats[4].base_stat;
     speedStats.textContent = data.stats[5].base_stat;
 
-    pokemonName.innerHTML = data.name.toUpperCase();
-    pokemonId.innerHTML = `Nº ${data.id.toString().padStart(4, "0")}`;
-    pokemonWeight.innerHTML = `Height: ${data.height}`;
-    pokemonHeight.innerHTML = `Weight: ${data.weight}`;
-    spriteContainer.innerHTML = `<img class="sprite-img" src="${data.sprites.front_default}" alt="${data.name}">`;
+    pokemonName.textContent = data.name.toUpperCase();
+    pokemonId.textContent = `#${data.id}`;
+    pokemonWeight.textContent = `Weight: ${data.weight}`;
+    pokemonHeight.textContent = `Height: ${data.height}`;
+
+    spriteContainer.innerHTML = `<img class="sprite-img" id="sprite" src="${data.sprites.front_default}" alt="${data.name}">`;
+
     typesConteiner.innerHTML = data.types.map((type)=>{
-      return `<span id="type" class="${type.type.name}">${type.type.name}</span>`
+      return `<span id="type-element" class="${type.type.name}">${type.type.name}</span>`
     }).join('');
 
     pokemonName.classList.remove('disable');
@@ -60,7 +63,7 @@ const fetchPokemon = async ()=>{
 
   }catch(err){
     alert("Pokémon not found");
-    console.log(err.ht);
+    console.log(`Pokémon not found: ${err}`);
   }
 }
 
